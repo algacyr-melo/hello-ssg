@@ -74,3 +74,28 @@ def split_nodes_delimiter_iterative(old_nodes, delimiter, text_type):
         new_nodes.extend(split_nodes)
     return new_nodes
 
+
+def split_nodes_image(old_nodes):
+    new_nodes = []
+    for old_node in old_nodes:
+        matches = extract_markdown_images(old_node.text)
+
+        # Did we extract any images?
+        if len(matches) == 0:
+            new_nodes.append(old_node)
+            continue
+
+        original_text = old_node.text
+        for text, url in matches:
+            split_nodes = []
+
+            sections = original_text.split(f"![{text}]({url})", 1)
+
+            if len(sections[0]) > 0:
+                split_nodes.append(TextNode(sections[0], TextType.TEXT))
+            split_nodes.append(TextNode(text, TextType.IMAGE, url))
+            new_nodes.extend(split_nodes)
+
+            original_text = sections[-1]
+        return new_nodes
+
