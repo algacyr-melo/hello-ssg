@@ -177,6 +177,30 @@ class TestInlineMarkdown(unittest.TestCase):
             new_nodes,
         )
 
+    def test_split_images_no_matches(self):
+        node = TextNode(
+            "This markdown ![image](https://i.imgur.com/zjjcJKZ.png is missing the closing bracket",
+            TextType.TEXT,
+        )
+        new_nodes = split_nodes_image([node])
+        self.assertListEqual(
+            [node],
+            new_nodes,
+        )
+
+    def test_split_images_empty_alt(self):
+        node = TextNode(
+            "This markdown image ![](https://i.imgur.com/zjjcJKZ.png) has an empty text",
+            TextType.TEXT,
+        )
+        new_nodes = split_nodes_image([node])
+        self.assertListEqual(
+            [
+                TextNode("This markdown image ", TextType.TEXT),
+                TextNode(" has an empty text", TextType.TEXT)
+            ],
+            new_nodes,
+        )
 
     def test_split_links(self):
         node = TextNode(
@@ -195,4 +219,5 @@ class TestInlineMarkdown(unittest.TestCase):
             ],
             new_nodes,
         )
+        # TODO: Add more tests for split_nodes_images/links
 
