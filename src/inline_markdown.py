@@ -27,7 +27,8 @@ def split_nodes_delimiter(old_nodes, delimiter, text_type):
                 continue
             if i % 2 == 0:
                 split_nodes.append(TextNode(sections[i], TextType.TEXT))
-            else: split_nodes.append(TextNode(sections[i], text_type))
+            else:
+                split_nodes.append(TextNode(sections[i], text_type))
         new_nodes.extend(split_nodes)
     return new_nodes
 
@@ -85,4 +86,23 @@ def split_nodes_link(old_nodes):
 
             original_text = sections[-1]
     return new_nodes
+
+def text_to_textnodes(text):
+    if not text:
+        return []
+
+    old_node = TextNode(text, TextType.TEXT)
+    nodes = [old_node]
+
+    delimiter_text_type_mapping = [
+        ("**", TextType.BOLD),
+        ("_", TextType.ITALIC),
+        ("`", TextType.CODE)
+    ]
+    for delimiter, text_type in delimiter_text_type_mapping:
+        nodes = split_nodes_delimiter(nodes, delimiter, text_type)
+
+    nodes = split_nodes_image(nodes)
+    nodes = split_nodes_link(nodes)
+    return nodes
 
