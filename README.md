@@ -17,4 +17,4 @@ Run unit tests with:
 ```
 
 ## License
-Este projeto está licenciado sob a GNU General Public License v3.0 - veja o arquivo [LICENSE](./LICENSE) para detalhes.
+This project is licensed under the GNU General Public License v3.0 — see the [LICENSE](./LICENSE) file for details.
