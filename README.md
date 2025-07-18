@@ -16,5 +16,5 @@ Run unit tests with:
 ./test.sh
 ```
 
-## Licença
+## License
 Este projeto está licenciado sob a GNU General Public License v3.0 - veja o arquivo [LICENSE](./LICENSE) para detalhes.
