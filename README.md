@@ -1,5 +1,5 @@
 # Hello, SSG!
-This is a static site generator (SSG) project that converts markdown
+This is a Static Site Generator (SSG) project that converts markdown
 files into HTML pages. This project is developed as part of [Boot.dev](https://boot.dev)'s curriculum.
 
 > This project is a **work in progress**, not functional yet.
@@ -15,3 +15,6 @@ Run unit tests with:
 ```bash
 ./test.sh
 ```
+
+## Licença
+Este projeto está licenciado sob a GNU General Public License v3.0 - veja o arquivo [LICENSE](./LICENSE) para detalhes.
