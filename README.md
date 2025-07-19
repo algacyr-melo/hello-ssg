@@ -1,4 +1,4 @@
-# Hello, SSG!
+# SSGenerator
 This is a Static Site Generator (SSG) project that converts markdown
 files into HTML pages. This project is developed as part of [Boot.dev](https://boot.dev)'s curriculum.
 
