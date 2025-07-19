@@ -1,8 +1,7 @@
-# SS Generator
-This is a Static Site Generator (SSG) project that converts markdown
-files into HTML pages. This project is developed as part of [Boot.dev](https://boot.dev)'s curriculum.
+# Hello, Static Site Generator
+Static Site Generator that converts markdown into HTML pages.
 
-> This project is a **work in progress**, not functional yet.
+> This project is being developed as part of [boot.dev](https://boot.dev)'s curriculum.
 
 ## Development Roadmap
 - [x] Text to Text Nodes
